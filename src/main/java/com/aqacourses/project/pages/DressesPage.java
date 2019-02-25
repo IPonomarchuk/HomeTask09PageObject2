@@ -10,8 +10,7 @@ import java.util.List;
 public class DressesPage extends AbstractPage {
 
     //Web elements
-    @FindBy(xpath = "//div[@class='block_content']//a[@title='Short dress, long dress, silk dress, printed dress, " +
-            "you will find the perfect dress for summer.'][contains(text(),'Summer Dresses')]")
+    @FindBy(xpath = "//div[@class='block_content']//li[@class='last']/a[contains(text(),'Summer Dresses')]")
     private WebElement summerDressesButton;
 
     @FindBy(xpath = "//input[@id='layered_id_attribute_group_8'][@style='background: #ffffff;']")
@@ -38,10 +37,13 @@ public class DressesPage extends AbstractPage {
 
     /**
      * Click on the "Summer Dresses" button
+     *
+     * @return new instance of SummerDressesPage
      */
-    public void chooseSummerDressesCategory() {
+    public SummerDressesPage chooseSummerDressesCategory() {
         testClass.waitTillElementIsVisible(summerDressesButton);
         summerDressesButton.click();
+        return new SummerDressesPage(testClass);
     }
 
     /**

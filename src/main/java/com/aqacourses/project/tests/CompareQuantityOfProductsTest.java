@@ -1,10 +1,7 @@
 package com.aqacourses.project.tests;
 
 import com.aqacourses.project.base.BaseTest;
-import com.aqacourses.project.pages.DressesPage;
-import com.aqacourses.project.pages.HomePage;
-import com.aqacourses.project.pages.LoginPage;
-import com.aqacourses.project.pages.MyAccountPage;
+import com.aqacourses.project.pages.*;
 import org.junit.Test;
 
 public class CompareQuantityOfProductsTest extends BaseTest {
@@ -30,16 +27,16 @@ public class CompareQuantityOfProductsTest extends BaseTest {
         DressesPage dressesPage = myAccountPage.openDressesPage();
 
         // Choose Summer Dresses Category
-        dressesPage.chooseSummerDressesCategory();
+        SummerDressesPage summerDressesPage = dressesPage.chooseSummerDressesCategory();
 
         // Verify that quantity of products on the page is the same as in the message
-        dressesPage.verifyQuantityOfProducts();
+        summerDressesPage.verifyQuantityOfProducts();
 
         // Choose white dresses
-        dressesPage.chooseWhiteDresses();
+        summerDressesPage.chooseWhiteDresses();
 
         // Verify that quantity of products on the page is the same as in the message
-        dressesPage.verifyQuantityOfProducts();
+        summerDressesPage.verifyQuantityOfProducts();
 
         // Close site
         closeSite();
