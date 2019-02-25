@@ -9,6 +9,11 @@ import org.junit.Test;
 
 public class CompareQuantityOfProductsTest extends BaseTest {
 
+    /**
+     * Open site and click on the "Sign in" link, fill in email and password to login form and click on the "Sign in" button
+     * Verify that quantity of products on the page is the same as in the message
+     * Choose white dresses and verify that quantity of products on the page is the same as in the message
+     */
     @Test
     public void testCompareQuantityOfProductsTest() {
 
