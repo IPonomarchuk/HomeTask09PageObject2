@@ -10,7 +10,7 @@ import java.util.List;
 public class DressesPage extends AbstractPage {
 
     //Web elements
-    @FindBy(xpath = "//div[@class='block_content']//li[@class='last']/a[contains(text(),'Summer Dresses')]")
+    @FindBy(xpath = "//div[@class='block_content']//li/a[contains(text(),'Summer Dresses')]")
     private WebElement summerDressesButton;
 
     @FindBy(xpath = "//input[@id='layered_id_attribute_group_8'][@style='background: #ffffff;']")
