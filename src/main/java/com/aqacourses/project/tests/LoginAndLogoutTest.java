@@ -9,8 +9,9 @@ import org.junit.Test;
 public class LoginAndLogoutTest extends BaseTest {
 
     /**
-     * Open site and click on the "Sign in" link, fill in email and password to login form and click on the "Sign in" button
-     * Verify name, click on the "Sign out" button and verify LoginPage after logout
+     * Open site and click on the "Sign in" link, fill in email and password to login form and click
+     * on the "Sign in" button Verify name, click on the "Sign out" button and verify LoginPage
+     * after logout
      */
     @Test
     public void testLoginAndLogoutTest() {
@@ -36,5 +37,4 @@ public class LoginAndLogoutTest extends BaseTest {
         // Close site
         closeSite();
     }
-
 }

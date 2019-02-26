@@ -2,10 +2,8 @@ package com.aqacourses.project.pages;
 
 import com.aqacourses.project.base.BaseTest;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MyAccountPage extends AbstractPage {
 
@@ -26,11 +24,8 @@ public class MyAccountPage extends AbstractPage {
         testClass.waitTillElementIsVisible(divPage);
     }
 
-    /**
-     * Verify name
-     */
+    /** Verify name */
     public void verifyName() {
         Assert.assertEquals("Name isn't correct", MY_NAME, name.getText());
     }
-
 }

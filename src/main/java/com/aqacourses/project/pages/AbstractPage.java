@@ -66,5 +66,4 @@ public abstract class AbstractPage {
         dressesButton.click();
         return new DressesPage(testClass);
     }
-
 }

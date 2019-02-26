@@ -1,15 +1,14 @@
 package com.aqacourses.project.pages;
 
 import com.aqacourses.project.base.BaseTest;
+import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 public class DressesPage extends AbstractPage {
 
-    //Web elements
+    // Web elements
     @FindBy(xpath = "//div[@class='block_content']//li/a[contains(text(),'Summer Dresses')]")
     private WebElement summerDressesButton;
 
@@ -46,23 +45,20 @@ public class DressesPage extends AbstractPage {
         return new SummerDressesPage(testClass);
     }
 
-    /**
-     * Click on the "White" checkbox
-     */
+    /** Click on the "White" checkbox */
     public void chooseWhiteDresses() {
         testClass.waitTillElementIsVisible(whiteCheckBox);
         whiteCheckBox.click();
         testClass.waitTillElementIsVisible(whiteColorFilter);
     }
 
-    /**
-     * Verify that quantity of products on the page is the same as in the message
-     */
+    /** Verify that quantity of products on the page is the same as in the message */
     public void verifyQuantityOfProducts() {
         testClass.waitTillListOfElementsAreVisible(listOfProducts);
         testClass.waitTillElementIsVisible(counterOfProducts);
-        Assert.assertEquals("Quantity of products on the page is not the same as in the message"
-                , listOfProducts.size(), Integer.parseInt(counterOfProducts.getText().replaceAll("[\\D]", "")));
+        Assert.assertEquals(
+                "Quantity of products on the page is not the same as in the message",
+                listOfProducts.size(),
+                Integer.parseInt(counterOfProducts.getText().replaceAll("[\\D]", "")));
     }
-
 }

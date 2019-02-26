@@ -1,6 +1,7 @@
 package com.aqacourses.project.pages;
 
 import com.aqacourses.project.base.BaseTest;
+import com.aqacourses.project.utils.YamlParser;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +11,7 @@ public class LoginPage extends AbstractPage {
     // Title of the LoginPage
     private final String TITLE = "Login - My Store";
 
-    //Web elements
+    // Web elements
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailTextField;
 
@@ -30,9 +31,7 @@ public class LoginPage extends AbstractPage {
         testClass.waitTillElementIsVisible(divPage);
     }
 
-    /**
-     * Verify LoginPage
-     */
+    /** Verify LoginPage */
     public void verifyLoginPage() {
         Assert.assertEquals("Title is not as expected", TITLE, testClass.getDriver().getTitle());
     }
@@ -44,10 +43,9 @@ public class LoginPage extends AbstractPage {
      */
     public MyAccountPage login() {
         testClass.waitTillElementIsVisible(emailTextField);
-        emailTextField.sendKeys("mystore@mailinator.com");
-        passwordTextField.sendKeys("mystore");
+        emailTextField.sendKeys(YamlParser.getYamlData().getEmail());
+        passwordTextField.sendKeys(YamlParser.getYamlData().getPassword());
         signInButton.click();
         return new MyAccountPage(testClass);
     }
-
 }

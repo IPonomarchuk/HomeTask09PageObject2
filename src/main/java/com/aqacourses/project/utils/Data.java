@@ -1,14 +1,25 @@
 package com.aqacourses.project.utils;
 
-public class YamlFile {
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-    // Values from yaml file
+@XmlRootElement(name = "data")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Data {
+
+    @XmlElement(name = "url")
     private String url;
+
+    @XmlElement(name = "email")
     private String email;
+
+    @XmlElement(name = "password")
     private String password;
 
     /**
-     * Get URL from yaml file
+     * Get URL from xml file
      *
      * @return String represents URL
      */
@@ -17,7 +28,7 @@ public class YamlFile {
     }
 
     /**
-     * Get email from yaml file
+     * Get email from xml file
      *
      * @return String represents email
      */
@@ -26,7 +37,7 @@ public class YamlFile {
     }
 
     /**
-     * Get password from yaml file
+     * Get password from xml file
      *
      * @return String represents password
      */

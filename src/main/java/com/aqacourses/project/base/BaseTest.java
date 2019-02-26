@@ -2,6 +2,7 @@ package com.aqacourses.project.base;
 
 import com.aqacourses.project.pages.HomePage;
 import com.aqacourses.project.utils.YamlParser;
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,17 +10,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
 public class BaseTest {
 
     // Instances of WebDriver and WebDriverWait
     private WebDriver driver;
     private WebDriverWait wait;
 
-    /**
-     * Constructor
-     */
+    /** Constructor */
     public BaseTest() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
@@ -49,9 +46,7 @@ public class BaseTest {
         return new HomePage(this);
     }
 
-    /**
-     * Close site with driver.quit()
-     */
+    /** Close site with driver.quit() */
     public void closeSite() {
         driver.quit();
     }
@@ -73,5 +68,4 @@ public class BaseTest {
     public void waitTillListOfElementsAreVisible(List<WebElement> elements) {
         wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
-
 }

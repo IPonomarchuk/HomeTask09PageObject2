@@ -13,5 +13,4 @@ public class HomePage extends AbstractPage {
         super(testClass);
         testClass.waitTillElementIsVisible(divPage);
     }
-
 }

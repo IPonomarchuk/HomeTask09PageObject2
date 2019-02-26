@@ -13,5 +13,4 @@ public class SummerDressesPage extends DressesPage {
         super(testClass);
         testClass.waitTillElementIsVisible(divPage);
     }
-
 }
